@@ -1,0 +1,10 @@
+{
+    "type": "news",
+    "title": "Title Example",
+    "description": "Description Example",
+    "url": "http://example.com/article",
+    "source": "Example Source",
+    "publishedAt": "2025-04-27T00:00:00Z",
+    "author": "Author Name"
+  }
+  

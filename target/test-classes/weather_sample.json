@@ -1,0 +1,10 @@
+{
+    "type": "weather",
+    "city": "London",
+    "temperature": 15.5,
+    "windSpeed": 5.2,
+    "humidity": 80,
+    "condition": "Cloudy",
+    "timestamp": 1714200000
+  }
+  

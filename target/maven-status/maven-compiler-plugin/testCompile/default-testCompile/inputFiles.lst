@@ -1,0 +1,10 @@
+C:\Users\User\JavaProjects\api-poller\src\test\java\com\example\apipoller\api\NasaApiServiceTest.java
+C:\Users\User\JavaProjects\api-poller\src\test\java\com\example\apipoller\api\NewsApiServiceTest.java
+C:\Users\User\JavaProjects\api-poller\src\test\java\com\example\apipoller\api\WeatherApiServiceTest.java
+C:\Users\User\JavaProjects\api-poller\src\test\java\com\example\apipoller\config\AppConfigTest.java
+C:\Users\User\JavaProjects\api-poller\src\test\java\com\example\apipoller\model\NasaRecordTest.java
+C:\Users\User\JavaProjects\api-poller\src\test\java\com\example\apipoller\model\NewsRecordTest.java
+C:\Users\User\JavaProjects\api-poller\src\test\java\com\example\apipoller\model\WeatherRecordTest.java
+C:\Users\User\JavaProjects\api-poller\src\test\java\com\example\apipoller\service\PollTaskTest.java
+C:\Users\User\JavaProjects\api-poller\src\test\java\com\example\apipoller\writer\CsvDataWriterTest.java
+C:\Users\User\JavaProjects\api-poller\src\test\java\com\example\apipoller\writer\JsonDataWriterTest.java

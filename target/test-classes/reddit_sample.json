@@ -1,0 +1,11 @@
+{
+    "type": "reddit",
+    "id": "abc123",
+    "title": "Post Title",
+    "author": "authorName",
+    "subreddit": "subredditName",
+    "selfText": "Self text content",
+    "created": 1714200000,
+    "score": 100
+  }
+  
