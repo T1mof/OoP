@@ -3,14 +3,20 @@ package com.example.apipoller.api;
 import com.example.apipoller.config.AppConfig;
 import com.example.apipoller.model.ApiRecord;
 import com.example.apipoller.model.NasaRecord;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.hc.client5.http.ConnectTimeoutException;
+import org.apache.hc.client5.http.ClientProtocolException;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.client5.http.HttpHostConnectException;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.hc.core5.http.message.StatusLine;
 
 import java.io.IOException;
+import java.net.SocketTimeoutException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -18,18 +24,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Сервис для получения данных из NASA API
+ * Сервис для получения данных с NASA API
  */
 public class NasaApiService implements ApiService {
     private static final Logger logger = Logger.getLogger(NasaApiService.class.getName());
     
     // Получаем ключ API из .env через AppConfig
     private static final String API_KEY = AppConfig.getNasaApiKey();
-    
-    // Эндпоинты NASA API
     private static final String APOD_API_URL = "https://api.nasa.gov/planetary/apod";
     private static final String MARS_PHOTOS_API_URL = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos";
-    
     private static final String[] API_TYPES = {"apod", "mars_photos"};
     
     private final Set<String> processedIds = Collections.synchronizedSet(new HashSet<>());
@@ -37,8 +40,20 @@ public class NasaApiService implements ApiService {
     private final ObjectMapper mapper;
     private int currentApiTypeIndex = 0;
 
+    /**
+     * Конструктор по умолчанию
+     */
     public NasaApiService() {
-        this.httpClient = HttpClients.createDefault();
+        this(HttpClients.createDefault());
+    }
+    
+    /**
+     * Конструктор с инъекцией HTTP клиента для тестирования
+     * 
+     * @param httpClient HTTP клиент для выполнения запросов
+     */
+    public NasaApiService(CloseableHttpClient httpClient) {
+        this.httpClient = httpClient;
         this.mapper = new ObjectMapper();
     }
 
@@ -49,7 +64,6 @@ public class NasaApiService implements ApiService {
 
     @Override
     public List<ApiRecord> fetchData() throws IOException {
-        // Циклически меняем тип API для разнообразия данных
         String apiType = API_TYPES[currentApiTypeIndex];
         currentApiTypeIndex = (currentApiTypeIndex + 1) % API_TYPES.length;
         
@@ -61,10 +75,12 @@ public class NasaApiService implements ApiService {
     }
     
     /**
-     * Получение данных из NASA Astronomy Picture of the Day API
+     * Получает данные с NASA Astronomy Picture of the Day API
+     * @return список записей с данными APOD
+     * @throws IOException если произошла ошибка при запросе
      */
     private List<ApiRecord> fetchAPODData() throws IOException {
-        // Для разнообразия возьмем случайную дату за последние 365 дней
+        // Выбираем случайную дату за последний год
         Random random = new Random();
         int daysToSubtract = random.nextInt(365) + 1;
         LocalDate randomDate = LocalDate.now().minusDays(daysToSubtract);
@@ -78,9 +94,11 @@ public class NasaApiService implements ApiService {
         try {
             return httpClient.execute(request, response -> {
                 try {
-                    if (response.getCode() != 200) {
-                        logger.warning("NASA API returned status code: " + response.getCode());
-                        throw new IOException("API returned status code: " + response.getCode());
+                    int statusCode = response.getCode();
+                    if (statusCode != 200) {
+                        String statusMessage = new StatusLine(response).getReasonPhrase();
+                        logger.warning("NASA API returned status code: " + statusCode + " - " + statusMessage);
+                        throw new IOException("API returned status code: " + statusCode + " - " + statusMessage);
                     }
                     
                     JsonNode root = mapper.readTree(response.getEntity().getContent());
@@ -88,7 +106,6 @@ public class NasaApiService implements ApiService {
                     String date = root.path("date").asText();
                     String id = "apod_" + date;
                     
-                    // Пропускаем уже обработанные записи
                     if (processedIds.contains(id)) {
                         logger.info("Already processed NASA APOD data for date: " + date);
                         return Collections.emptyList();
@@ -109,23 +126,39 @@ public class NasaApiService implements ApiService {
                     logger.info("Fetched new NASA APOD data for date: " + date);
                     return Collections.singletonList(record);
                 } finally {
-                    // Освобождаем ресурсы
                     EntityUtils.consume(response.getEntity());
                 }
             });
-        } catch (Exception e) {
-            logger.log(Level.SEVERE, "Error fetching data from NASA APOD API", e);
-            throw new IOException("Error fetching data from NASA APOD API: " + e.getMessage(), e);
+        } catch (ConnectTimeoutException e) {
+            logger.log(Level.SEVERE, "Connection timeout when accessing NASA APOD API", e);
+            throw new IOException("Connection timeout when accessing NASA APOD API: " + e.getMessage(), e);
+        } catch (SocketTimeoutException e) {
+            logger.log(Level.SEVERE, "Socket timeout when reading from NASA APOD API", e);
+            throw new IOException("Socket timeout when reading from NASA APOD API: " + e.getMessage(), e);
+        } catch (HttpHostConnectException e) {
+            logger.log(Level.SEVERE, "Unable to connect to NASA APOD API host", e);
+            throw new IOException("Unable to connect to NASA APOD API host: " + e.getMessage(), e);
+        } catch (ClientProtocolException e) {
+            logger.log(Level.SEVERE, "HTTP protocol error when accessing NASA APOD API", e);
+            throw new IOException("HTTP protocol error when accessing NASA APOD API: " + e.getMessage(), e);
+        } catch (JsonProcessingException e) {
+            logger.log(Level.SEVERE, "Error parsing JSON from NASA APOD API response", e);
+            throw new IOException("Error parsing JSON from NASA APOD API response: " + e.getMessage(), e);
+        } catch (IOException e) {
+            logger.log(Level.SEVERE, "I/O error when accessing NASA APOD API", e);
+            throw e;
         }
     }
     
     /**
-     * Получение данных из NASA Mars Rover Photos API
+     * Получает данные с NASA Mars Rover Photos API
+     * @return список записей с данными Mars Rover
+     * @throws IOException если произошла ошибка при запросе
      */
     private List<ApiRecord> fetchMarsRoverData() throws IOException {
-        // Для марсохода Curiosity используем случайный sol (марсианский день)
+        // Выбираем случайный sol (марсианский день) из доступных для Curiosity
         Random random = new Random();
-        int sol = random.nextInt(3000) + 1; // Curiosity работает уже больше 3000 солов
+        int sol = random.nextInt(3000) + 1;
         
         String apiUrl = String.format("%s?sol=%d&api_key=%s&page=1", MARS_PHOTOS_API_URL, sol, API_KEY);
         
@@ -135,57 +168,78 @@ public class NasaApiService implements ApiService {
         try {
             return httpClient.execute(request, response -> {
                 try {
-                    if (response.getCode() != 200) {
-                        logger.warning("NASA API returned status code: " + response.getCode());
-                        throw new IOException("API returned status code: " + response.getCode());
+                    int statusCode = response.getCode();
+                    if (statusCode != 200) {
+                        String statusMessage = new StatusLine(response).getReasonPhrase();
+                        logger.warning("NASA Mars Rover API returned status code: " + statusCode + " - " + statusMessage);
+                        throw new IOException("API returned status code: " + statusCode + " - " + statusMessage);
                     }
                     
                     JsonNode root = mapper.readTree(response.getEntity().getContent());
                     JsonNode photos = root.path("photos");
                     
-                    if (!photos.isArray() || photos.size() == 0) {
-                        logger.info("No photos found in NASA Mars Rover API response");
+                    if (photos == null || photos.isEmpty() || !photos.isArray()) {
+                        logger.info("No photos found for sol: " + sol);
                         return Collections.emptyList();
                     }
                     
-                    List<ApiRecord> records = new ArrayList<>();
-                    int count = Math.min(photos.size(), 5); // Ограничим до 5 фото
+                    // Выбираем случайную фотографию из полученных
+                    int numPhotos = photos.size();
+                    int photoIndex = random.nextInt(numPhotos);
+                    JsonNode photoNode = photos.get(photoIndex);
                     
-                    for (int i = 0; i < count; i++) {
-                        JsonNode photo = photos.get(i);
-                        String id = "mars_" + photo.path("id").asText();
-                        
-                        // Пропускаем уже обработанные фото
-                        if (processedIds.contains(id)) {
-                            continue;
-                        }
-                        
-                        processedIds.add(id);
-                        
-                        NasaRecord record = new NasaRecord(
-                            id,
-                            "Mars Rover Photo: " + photo.path("rover").path("name").asText(),
-                            photo.path("earth_date").asText(),
-                            "Photo taken by " + photo.path("camera").path("full_name").asText() + 
-                            " on Mars rover " + photo.path("rover").path("name").asText(),
-                            photo.path("img_src").asText(),
-                            "image",
-                            "NASA/JPL-Caltech"
-                        );
-                        
-                        records.add(record);
+                    String id = "mars_" + photoNode.path("id").asText();
+                    
+                    // Пропускаем уже обработанные фотографии
+                    if (processedIds.contains(id)) {
+                        logger.info("Already processed Mars Rover photo with id: " + id);
+                        return Collections.emptyList();
                     }
                     
-                    logger.info("Fetched " + records.size() + " new Mars Rover photos");
-                    return records;
+                    processedIds.add(id);
+                    
+                    // Создание записи с данными фотографии
+                    String earthDate = photoNode.path("earth_date").asText();
+                    JsonNode cameraNode = photoNode.path("camera");
+                    String cameraName = cameraNode.path("full_name").asText();
+                    String imageUrl = photoNode.path("img_src").asText();
+                    JsonNode roverNode = photoNode.path("rover");
+                    String roverName = roverNode.path("name").asText();
+                    
+                    NasaRecord record = new NasaRecord(
+                        id,
+                        "Mars Rover Photo by " + cameraName,
+                        earthDate,
+                        "Photo taken by " + roverName + " rover on Mars using " + cameraName,
+                        imageUrl,
+                        "image",
+                        "NASA/JPL"
+                    );
+                    
+                    logger.info("Fetched new Mars Rover photo data for sol: " + sol);
+                    return Collections.singletonList(record);
                 } finally {
-                    // Освобождаем ресурсы
                     EntityUtils.consume(response.getEntity());
                 }
             });
-        } catch (Exception e) {
-            logger.log(Level.SEVERE, "Error fetching data from NASA Mars Rover API", e);
-            throw new IOException("Error fetching data from NASA Mars Rover API: " + e.getMessage(), e);
+        } catch (ConnectTimeoutException e) {
+            logger.log(Level.SEVERE, "Connection timeout when accessing NASA Mars Rover API", e);
+            throw new IOException("Connection timeout when accessing NASA Mars Rover API: " + e.getMessage(), e);
+        } catch (SocketTimeoutException e) {
+            logger.log(Level.SEVERE, "Socket timeout when reading from NASA Mars Rover API", e);
+            throw new IOException("Socket timeout when reading from NASA Mars Rover API: " + e.getMessage(), e);
+        } catch (HttpHostConnectException e) {
+            logger.log(Level.SEVERE, "Unable to connect to NASA Mars Rover API host", e);
+            throw new IOException("Unable to connect to NASA Mars Rover API host: " + e.getMessage(), e);
+        } catch (ClientProtocolException e) {
+            logger.log(Level.SEVERE, "HTTP protocol error when accessing NASA Mars Rover API", e);
+            throw new IOException("HTTP protocol error when accessing NASA Mars Rover API: " + e.getMessage(), e);
+        } catch (JsonProcessingException e) {
+            logger.log(Level.SEVERE, "Error parsing JSON from NASA Mars Rover API response", e);
+            throw new IOException("Error parsing JSON from NASA Mars Rover API response: " + e.getMessage(), e);
+        } catch (IOException e) {
+            logger.log(Level.SEVERE, "I/O error when accessing NASA Mars Rover API", e);
+            throw e;
         }
     }
 }

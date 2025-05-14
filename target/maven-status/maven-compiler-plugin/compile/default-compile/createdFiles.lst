@@ -1,11 +1,14 @@
 com\example\apipoller\api\NewsApiService.class
 com\example\apipoller\model\NasaRecord.class
+com\example\apipoller\service\ParserShutdownMonitor.class
 com\example\apipoller\api\ApiServiceFactory.class
-com\example\apipoller\ApiPollerApp.class
 com\example\apipoller\config\AppConfig.class
 com\example\apipoller\model\NewsRecord.class
 com\example\apipoller\service\PollScheduler.class
 com\example\apipoller\writer\CsvDataWriter.class
+com\example\apipoller\logging\AppLogSetup.class
+com\example\apipoller\config\AppConfig$ConfigurationException.class
+com\example\apipoller\start\ApiPollerApp.class
 com\example\apipoller\api\ApiService.class
 com\example\apipoller\api\NasaApiService.class
 com\example\apipoller\service\PollTask.class

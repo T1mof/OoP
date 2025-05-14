@@ -3,14 +3,16 @@ C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\api\Ap
 C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\api\NasaApiService.java
 C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\api\NewsApiService.java
 C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\api\WeatherApiService.java
-C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\ApiPollerApp.java
 C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\config\AppConfig.java
+C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\logging\AppLogSetup.java
 C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\model\ApiRecord.java
 C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\model\NasaRecord.java
 C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\model\NewsRecord.java
 C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\model\WeatherRecord.java
+C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\service\ParserShutdownMonitor.java
 C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\service\PollScheduler.java
 C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\service\PollTask.java
+C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\start\ApiPollerApp.java
 C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\writer\CsvDataWriter.java
 C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\writer\DataWriter.java
 C:\Users\User\JavaProjects\api-poller\src\main\java\com\example\apipoller\writer\DataWriterFactory.java

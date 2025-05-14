@@ -6,6 +6,7 @@ import com.example.apipoller.config.AppConfig;
 import com.example.apipoller.writer.DataWriter;
 import com.example.apipoller.writer.DataWriterFactory;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
@@ -53,7 +54,7 @@ public class PollScheduler {
                 tasks.add(task);
                 taskQueue.add(task);
             } catch (IllegalArgumentException e) {
-                logger.warning("Skipping unknown service: " + serviceName);
+                logger.warning("Skipping unknown service: " + serviceName + ". Reason: " + e.getMessage());
             }
         }
         
@@ -95,8 +96,12 @@ public class PollScheduler {
         // Закрытие писателя
         try {
             writer.close();
-        } catch (Exception e) {
-            logger.log(Level.SEVERE, "Error closing writer", e);
+        } catch (IOException e) {
+            logger.log(Level.SEVERE, "I/O error while closing writer: " + e.getMessage(), e);
+        } catch (IllegalStateException e) {
+            logger.log(Level.SEVERE, "Writer in invalid state during close: " + e.getMessage(), e);
+        } catch (RuntimeException e) {
+            logger.log(Level.SEVERE, "Unexpected runtime error closing writer: " + e.getMessage(), e);
         }
         
         logger.info("Scheduler shut down");
@@ -128,8 +133,15 @@ public class PollScheduler {
         } catch (InterruptedException e) {
             logger.info("Coordinator thread interrupted");
             Thread.currentThread().interrupt();
-        } catch (Exception e) {
-            logger.log(Level.SEVERE, "Error in coordinator thread", e);
+        } catch (RejectedExecutionException e) {
+            logger.log(Level.SEVERE, "Task rejected by executor: " + e.getMessage(), e);
+            Thread.currentThread().interrupt();
+        } catch (NullPointerException e) {
+            logger.log(Level.SEVERE, "Null reference encountered in coordinator: " + e.getMessage(), e);
+            Thread.currentThread().interrupt();
+        } catch (RuntimeException e) {
+            logger.log(Level.SEVERE, "Runtime error in coordinator thread: " + e.getMessage(), e);
+            Thread.currentThread().interrupt();
         }
     }
 }

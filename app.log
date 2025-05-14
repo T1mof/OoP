@@ -1,0 +1,158 @@
+мая 14, 2025 12:46:29 PM com.example.apipoller.logging.AppLogSetup setupLogger
+INFO: Логирование в файл app.log настроено
+мая 14, 2025 12:48:52 PM com.example.apipoller.logging.AppLogSetup setupLogger
+INFO: Логирование в файл app.log настроено
+мая 14, 2025 12:50:07 PM com.example.apipoller.logging.AppLogSetup setupLogger
+INFO: Логирование в файл app.log настроено
+мая 14, 2025 12:50:51 PM com.example.apipoller.logging.AppLogSetup setupLogger
+INFO: Логирование в файл app.log настроено
+[2025-05-14 12:58:37] [INFO] com.example.apipoller.logging.AppLogSetup: Логирование в файл app.log настроено 
+[2025-05-14 12:58:37] [INFO] com.example.apipoller.config.AppConfig: Environment configuration loaded successfully 
+[2025-05-14 12:58:37] [INFO] com.example.apipoller.config.AppConfig: API keys validation complete 
+[2025-05-14 12:58:37] [INFO] com.example.apipoller.config.AppConfig: Application configuration loaded successfully from command-line arguments 
+[2025-05-14 12:58:37] [INFO] com.example.apipoller.start.ApiPollerApp: Starting API Poller v1.0.0 with config: AppConfig{maxThreads=2, timeoutSeconds=10, services=[weather], outputFormat='json', outputFile='output.json'} 
+[2025-05-14 12:58:38] [INFO] com.example.apipoller.service.PollScheduler: Scheduler started with 1 services and 2 max concurrent threads 
+[2025-05-14 12:58:38] [INFO] com.example.apipoller.service.PollTask: Polling service: weather 
+[2025-05-14 12:58:38] [INFO] com.example.apipoller.start.ApiPollerApp: Parser shutdown monitor daemon started 
+[2025-05-14 12:58:38] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Parser shutdown monitor started 
+[2025-05-14 12:58:38] [INFO] com.example.apipoller.api.WeatherApiService: Fetching weather data for Moscow using coordinates 
+[2025-05-14 12:58:38] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Command listener thread started 
+[2025-05-14 12:58:38] [INFO] com.example.apipoller.start.ApiPollerApp: Shutdown hook registered 
+[2025-05-14 12:58:38] [INFO] com.example.apipoller.start.ApiPollerApp: API Poller is running. Type 'help' for available commands. 
+[2025-05-14 12:58:38] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Command listener started. Type 'stop' to gracefully shutdown the application. 
+[2025-05-14 12:58:38] [INFO] com.example.apipoller.api.WeatherApiService: Fetched new weather data for Moscow 
+[2025-05-14 12:58:38] [INFO] com.example.apipoller.service.PollTask: Got 1 new records from weather 
+[2025-05-14 12:58:38] [INFO] com.example.apipoller.writer.JsonDataWriter: Successfully wrote 1 records to JSON file: output.json 
+[2025-05-14 12:58:48] [INFO] com.example.apipoller.service.PollTask: Scheduled next poll for weather after 10 SECONDS 
+[2025-05-14 12:58:48] [INFO] com.example.apipoller.service.PollTask: Polling service: weather 
+[2025-05-14 12:58:48] [INFO] com.example.apipoller.api.WeatherApiService: Fetching weather data for New York using coordinates 
+[2025-05-14 12:58:49] [INFO] com.example.apipoller.api.WeatherApiService: Fetched new weather data for New York 
+[2025-05-14 12:58:49] [INFO] com.example.apipoller.service.PollTask: Got 1 new records from weather 
+[2025-05-14 12:58:49] [INFO] com.example.apipoller.writer.JsonDataWriter: Successfully wrote 1 records to JSON file: output.json 
+[2025-05-14 12:58:59] [INFO] com.example.apipoller.service.PollTask: Scheduled next poll for weather after 10 SECONDS 
+[2025-05-14 12:58:59] [INFO] com.example.apipoller.service.PollTask: Polling service: weather 
+[2025-05-14 12:58:59] [INFO] com.example.apipoller.api.WeatherApiService: Fetching weather data for Tokyo using coordinates 
+[2025-05-14 12:58:59] [INFO] com.example.apipoller.api.WeatherApiService: Fetched new weather data for Horinouchi 
+[2025-05-14 12:58:59] [INFO] com.example.apipoller.service.PollTask: Got 1 new records from weather 
+[2025-05-14 12:58:59] [INFO] com.example.apipoller.writer.JsonDataWriter: Successfully wrote 1 records to JSON file: output.json 
+[2025-05-14 12:59:09] [INFO] com.example.apipoller.service.PollTask: Scheduled next poll for weather after 10 SECONDS 
+[2025-05-14 12:59:09] [INFO] com.example.apipoller.service.PollTask: Polling service: weather 
+[2025-05-14 12:59:09] [INFO] com.example.apipoller.api.WeatherApiService: Fetching weather data for London using coordinates 
+[2025-05-14 12:59:09] [INFO] com.example.apipoller.api.WeatherApiService: Fetched new weather data for London 
+[2025-05-14 12:59:09] [INFO] com.example.apipoller.service.PollTask: Got 1 new records from weather 
+[2025-05-14 12:59:09] [INFO] com.example.apipoller.writer.JsonDataWriter: Successfully wrote 1 records to JSON file: output.json 
+[2025-05-14 12:59:16] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Received 'stop' command from console. Initiating graceful shutdown... 
+[2025-05-14 12:59:16] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Shutdown requested 
+[2025-05-14 12:59:16] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Shutdown requested, stopping parser gracefully... 
+[2025-05-14 12:59:16] [INFO] com.example.apipoller.service.PollTask: Stopping poll task for weather 
+[2025-05-14 12:59:16] [INFO] com.example.apipoller.service.PollScheduler: Scheduler shut down 
+[2025-05-14 12:59:16] [INFO] com.example.apipoller.service.PollTask: Poll task for weather was interrupted during scheduling 
+[2025-05-14 12:59:16] [INFO] com.example.apipoller.service.PollScheduler: Coordinator thread interrupted 
+[2025-05-14 12:59:16] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Parser has been shut down gracefully 
+[2025-05-14 13:10:01] [INFO] com.example.apipoller.start.ApiPollerApp: JVM shutdown initiated, notifying parser shutdown monitor... 
+[2025-05-14 13:10:14] [INFO] com.example.apipoller.logging.AppLogSetup: Логирование в файл app.log настроено 
+[2025-05-14 13:10:14] [INFO] com.example.apipoller.config.AppConfig: Environment configuration loaded successfully 
+[2025-05-14 13:10:14] [INFO] com.example.apipoller.config.AppConfig: API keys validation complete 
+[2025-05-14 13:10:14] [INFO] com.example.apipoller.config.AppConfig: Application configuration loaded successfully from command-line arguments 
+[2025-05-14 13:10:14] [INFO] com.example.apipoller.start.ApiPollerApp: Starting API Poller v1.0.0 with config: AppConfig{maxThreads=2, timeoutSeconds=10, services=[weather], outputFormat='json', outputFile='output.json'} 
+[2025-05-14 13:10:15] [INFO] com.example.apipoller.service.PollScheduler: Scheduler started with 1 services and 2 max concurrent threads 
+[2025-05-14 13:10:15] [INFO] com.example.apipoller.service.PollTask: Polling service: weather 
+[2025-05-14 13:10:15] [INFO] com.example.apipoller.start.ApiPollerApp: Parser shutdown monitor daemon started 
+[2025-05-14 13:10:15] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Parser shutdown monitor started 
+[2025-05-14 13:10:15] [INFO] com.example.apipoller.api.WeatherApiService: Fetching weather data for London using coordinates 
+[2025-05-14 13:10:15] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Command listener thread started 
+[2025-05-14 13:10:15] [INFO] com.example.apipoller.start.ApiPollerApp: Shutdown hook registered 
+[2025-05-14 13:10:15] [INFO] com.example.apipoller.start.ApiPollerApp: API Poller is running. Type 'help' for available commands. 
+[2025-05-14 13:10:15] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Command listener started. Type 'stop' to gracefully shutdown the application. 
+[2025-05-14 13:10:15] [INFO] com.example.apipoller.api.WeatherApiService: Fetched new weather data for London 
+[2025-05-14 13:10:15] [INFO] com.example.apipoller.service.PollTask: Got 1 new records from weather 
+[2025-05-14 13:10:15] [INFO] com.example.apipoller.writer.JsonDataWriter: Successfully wrote 1 records to JSON file: output.json 
+[2025-05-14 13:10:20] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Received 'stop' command from console. Initiating graceful shutdown... 
+[2025-05-14 13:10:20] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Shutdown requested 
+[2025-05-14 13:10:20] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Exiting application 
+[2025-05-14 13:10:20] [INFO] com.example.apipoller.start.ApiPollerApp: JVM shutdown initiated, notifying parser shutdown monitor... 
+[2025-05-14 13:10:20] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Shutdown requested 
+[2025-05-14 13:11:55] [INFO] com.example.apipoller.logging.AppLogSetup: Логирование в файл app.log настроено 
+[2025-05-14 13:11:55] [INFO] com.example.apipoller.config.AppConfig: Environment configuration loaded successfully 
+[2025-05-14 13:11:55] [INFO] com.example.apipoller.config.AppConfig: API keys validation complete 
+[2025-05-14 13:11:55] [INFO] com.example.apipoller.config.AppConfig: Application configuration loaded successfully from command-line arguments 
+[2025-05-14 13:11:55] [INFO] com.example.apipoller.start.ApiPollerApp: Starting API Poller v1.0.0 with config: AppConfig{maxThreads=2, timeoutSeconds=10, services=[weather], outputFormat='json', outputFile='output.json'} 
+[2025-05-14 13:11:55] [INFO] com.example.apipoller.service.PollScheduler: Scheduler started with 1 services and 2 max concurrent threads 
+[2025-05-14 13:11:55] [INFO] com.example.apipoller.service.PollTask: Polling service: weather 
+[2025-05-14 13:11:55] [INFO] com.example.apipoller.start.ApiPollerApp: Parser shutdown monitor daemon started 
+[2025-05-14 13:11:55] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Parser shutdown monitor started 
+[2025-05-14 13:11:55] [INFO] com.example.apipoller.api.WeatherApiService: Fetching weather data for Berlin using coordinates 
+[2025-05-14 13:11:55] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Command listener thread started 
+[2025-05-14 13:11:55] [INFO] com.example.apipoller.start.ApiPollerApp: Shutdown hook registered 
+[2025-05-14 13:11:55] [INFO] com.example.apipoller.start.ApiPollerApp: API Poller is running. Type 'help' for available commands. 
+[2025-05-14 13:11:55] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Command listener started. Type 'stop' to gracefully shutdown the application. 
+[2025-05-14 13:11:56] [INFO] com.example.apipoller.api.WeatherApiService: Fetched new weather data for Mitte 
+[2025-05-14 13:11:56] [INFO] com.example.apipoller.service.PollTask: Got 1 new records from weather 
+[2025-05-14 13:11:56] [INFO] com.example.apipoller.writer.JsonDataWriter: Successfully wrote 1 records to JSON file: output.json 
+[2025-05-14 13:12:01] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Received 'stop' command from console. Initiating graceful shutdown... 
+[2025-05-14 13:12:01] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Shutdown requested 
+[2025-05-14 13:12:01] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Shutdown requested, stopping parser gracefully... 
+[2025-05-14 13:12:01] [INFO] com.example.apipoller.service.PollTask: Stopping poll task for weather 
+[2025-05-14 13:12:01] [INFO] com.example.apipoller.service.PollScheduler: Scheduler shut down 
+[2025-05-14 13:12:01] [INFO] com.example.apipoller.service.PollScheduler: Coordinator thread interrupted 
+[2025-05-14 13:12:01] [INFO] com.example.apipoller.service.PollTask: Poll task for weather was interrupted during scheduling 
+[2025-05-14 13:12:01] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Parser has been shut down gracefully 
+[2025-05-14 13:12:01] [INFO] com.example.apipoller.service.ParserShutdownMonitor: All tasks completed successfully 
+[2025-05-14 13:12:01] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Exiting application 
+[2025-05-14 13:12:01] [INFO] com.example.apipoller.start.ApiPollerApp: JVM shutdown initiated, notifying parser shutdown monitor... 
+[2025-05-14 13:14:24] [INFO] com.example.apipoller.logging.AppLogSetup: Логирование в файл app.log настроено 
+[2025-05-14 13:14:24] [INFO] com.example.apipoller.config.AppConfig: Environment configuration loaded successfully 
+[2025-05-14 13:14:24] [INFO] com.example.apipoller.config.AppConfig: API keys validation complete 
+[2025-05-14 13:14:24] [INFO] com.example.apipoller.config.AppConfig: Application configuration loaded successfully from command-line arguments 
+[2025-05-14 13:14:24] [INFO] com.example.apipoller.start.ApiPollerApp: Starting API Poller v1.0.0 with config: AppConfig{maxThreads=2, timeoutSeconds=10, services=[weather], outputFormat='json', outputFile='output.json'} 
+[2025-05-14 13:14:24] [INFO] com.example.apipoller.service.PollScheduler: Scheduler started with 1 services and 2 max concurrent threads 
+[2025-05-14 13:14:24] [INFO] com.example.apipoller.service.PollTask: Polling service: weather 
+[2025-05-14 13:14:24] [INFO] com.example.apipoller.start.ApiPollerApp: Parser shutdown monitor daemon started 
+[2025-05-14 13:14:24] [INFO] com.example.apipoller.api.WeatherApiService: Fetching weather data for London using coordinates 
+[2025-05-14 13:14:24] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Parser shutdown monitor started 
+[2025-05-14 13:14:24] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Command listener thread started 
+[2025-05-14 13:14:24] [INFO] com.example.apipoller.start.ApiPollerApp: Shutdown hook registered 
+[2025-05-14 13:14:24] [INFO] com.example.apipoller.start.ApiPollerApp: API Poller is running. Type 'help' for available commands. 
+[2025-05-14 13:14:24] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Command listener started. Type 'stop' to gracefully shutdown the application. 
+[2025-05-14 13:14:25] [INFO] com.example.apipoller.api.WeatherApiService: Fetched new weather data for London 
+[2025-05-14 13:14:25] [INFO] com.example.apipoller.service.PollTask: Got 1 new records from weather 
+[2025-05-14 13:14:25] [INFO] com.example.apipoller.writer.JsonDataWriter: Successfully wrote 1 records to JSON file: output.json 
+[2025-05-14 13:14:26] [INFO] com.example.apipoller.start.ApiPollerApp: JVM shutdown initiated, notifying parser shutdown monitor... 
+[2025-05-14 13:18:55] [INFO] com.example.apipoller.logging.AppLogSetup: Логирование в файл app.log настроено 
+[2025-05-14 13:18:55] [INFO] com.example.apipoller.config.AppConfig: Environment configuration loaded successfully 
+[2025-05-14 13:18:55] [INFO] com.example.apipoller.config.AppConfig: API keys validation complete 
+[2025-05-14 13:18:55] [INFO] com.example.apipoller.config.AppConfig: Application configuration loaded successfully from command-line arguments 
+[2025-05-14 13:18:55] [INFO] com.example.apipoller.start.ApiPollerApp: Starting API Poller v1.0.0 with config: AppConfig{maxThreads=2, timeoutSeconds=10, services=[weather], outputFormat='json', outputFile='output.json'} 
+[2025-05-14 13:18:55] [INFO] com.example.apipoller.service.PollScheduler: Scheduler started with 1 services and 2 max concurrent threads 
+[2025-05-14 13:18:55] [INFO] com.example.apipoller.service.PollTask: Polling service: weather 
+[2025-05-14 13:18:55] [INFO] com.example.apipoller.start.ApiPollerApp: Parser shutdown monitor daemon started 
+[2025-05-14 13:18:55] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Parser shutdown monitor started 
+[2025-05-14 13:18:55] [INFO] com.example.apipoller.api.WeatherApiService: Fetching weather data for Tokyo using coordinates 
+[2025-05-14 13:18:55] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Command listener thread started 
+[2025-05-14 13:18:55] [INFO] com.example.apipoller.start.ApiPollerApp: Shutdown hook registered 
+[2025-05-14 13:18:55] [INFO] com.example.apipoller.start.ApiPollerApp: API Poller is running. Type 'help' for available commands. 
+[2025-05-14 13:18:55] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Command listener started. Type 'stop' to gracefully shutdown the application. 
+[2025-05-14 13:18:56] [INFO] com.example.apipoller.api.WeatherApiService: Fetched new weather data for Horinouchi 
+[2025-05-14 13:18:56] [INFO] com.example.apipoller.service.PollTask: Got 1 new records from weather 
+[2025-05-14 13:18:56] [INFO] com.example.apipoller.writer.JsonDataWriter: Successfully wrote 1 records to JSON file: output.json 
+[2025-05-14 13:19:00] [INFO] com.example.apipoller.start.ApiPollerApp: JVM shutdown initiated, notifying parser shutdown monitor... 
+[2025-05-14 13:20:31] [INFO] com.example.apipoller.logging.AppLogSetup: Логирование в файл app.log настроено 
+[2025-05-14 13:20:31] [INFO] com.example.apipoller.config.AppConfig: Environment configuration loaded successfully 
+[2025-05-14 13:20:31] [INFO] com.example.apipoller.config.AppConfig: API keys validation complete 
+[2025-05-14 13:20:31] [INFO] com.example.apipoller.config.AppConfig: Application configuration loaded successfully from command-line arguments 
+[2025-05-14 13:20:31] [INFO] com.example.apipoller.start.ApiPollerApp: Starting API Poller v1.0.0 with config: AppConfig{maxThreads=2, timeoutSeconds=10, services=[weather], outputFormat='json', outputFile='output.json'} 
+[2025-05-14 13:20:31] [INFO] com.example.apipoller.service.PollScheduler: Scheduler started with 1 services and 2 max concurrent threads 
+[2025-05-14 13:20:31] [INFO] com.example.apipoller.service.PollTask: Polling service: weather 
+[2025-05-14 13:20:31] [INFO] com.example.apipoller.api.WeatherApiService: Fetching weather data for Moscow using coordinates 
+[2025-05-14 13:20:31] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Ctrl+C signal handler registered 
+[2025-05-14 13:20:31] [INFO] com.example.apipoller.start.ApiPollerApp: Parser shutdown monitor daemon started 
+[2025-05-14 13:20:31] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Parser shutdown monitor started 
+[2025-05-14 13:20:31] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Command listener thread started 
+[2025-05-14 13:20:31] [INFO] com.example.apipoller.start.ApiPollerApp: Shutdown hook registered 
+[2025-05-14 13:20:31] [INFO] com.example.apipoller.start.ApiPollerApp: API Poller is running. Type 'help' for available commands. 
+[2025-05-14 13:20:31] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Command listener started. Type 'stop' to gracefully shutdown the application. 
+[2025-05-14 13:20:32] [INFO] com.example.apipoller.api.WeatherApiService: Fetched new weather data for Moscow Oblast 
+[2025-05-14 13:20:32] [INFO] com.example.apipoller.service.PollTask: Got 1 new records from weather 
+[2025-05-14 13:20:32] [INFO] com.example.apipoller.writer.JsonDataWriter: Successfully wrote 1 records to JSON file: output.json 
+[2025-05-14 13:20:33] [INFO] com.example.apipoller.service.ParserShutdownMonitor: Received Ctrl+C signal, exiting immediately 
+[2025-05-14 13:20:33] [INFO] com.example.apipoller.start.ApiPollerApp: JVM shutdown initiated, notifying parser shutdown monitor... 

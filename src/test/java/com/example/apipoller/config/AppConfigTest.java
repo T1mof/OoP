@@ -2,6 +2,7 @@ package com.example.apipoller.config;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import com.example.apipoller.config.AppConfig.ConfigurationException;
 
 public class AppConfigTest {
 
@@ -18,10 +19,11 @@ public class AppConfigTest {
 
     @Test
     public void testInvalidArgs() {
-        assertThrows(IllegalArgumentException.class, () -> AppConfig.fromArgs(new String[]{}));
-        assertThrows(IllegalArgumentException.class, () -> AppConfig.fromArgs(new String[]{"0", "10", "json", "news"}));
-        assertThrows(IllegalArgumentException.class, () -> AppConfig.fromArgs(new String[]{"3", "0", "json", "news"}));
-        assertThrows(IllegalArgumentException.class, () -> AppConfig.fromArgs(new String[]{"3", "10", "xml", "news"}));
-        assertThrows(IllegalArgumentException.class, () -> AppConfig.fromArgs(new String[]{"3", "10", "json"}));
+        // Заменяем IllegalArgumentException на ConfigurationException
+        assertThrows(ConfigurationException.class, () -> AppConfig.fromArgs(new String[]{}));
+        assertThrows(ConfigurationException.class, () -> AppConfig.fromArgs(new String[]{"0", "10", "json", "news"}));
+        assertThrows(ConfigurationException.class, () -> AppConfig.fromArgs(new String[]{"3", "0", "json", "news"}));
+        assertThrows(ConfigurationException.class, () -> AppConfig.fromArgs(new String[]{"3", "10", "xml", "news"}));
+        assertThrows(ConfigurationException.class, () -> AppConfig.fromArgs(new String[]{"3", "10", "json"}));
     }
 }

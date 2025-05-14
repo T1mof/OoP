@@ -563,4 +563,268 @@
   "type" : "weather",
   "windSpeed" : 6.02,
   "timestamp" : 1745738389
+}, {
+  "publishedAt" : "2025-05-13T10:10:00Z",
+  "author" : "Teresa Cerojano",
+  "description" : "Election officials say former Philippine President Rodrigo Duterte has been elected as mayor in his home city by a landslide, despite his detention by the International Criminal Court. Duterte won the race for Davao mayor. Unofficial results showed at least f…",
+  "source" : "Associated Press",
+  "type" : "news",
+  "title" : "Detained Philippines ex-President Duterte wins mayoral race in his home city - AP News",
+  "url" : "https://apnews.com/article/philippines-midterm-elections-duterte-senate-5c7ac2250249f71281ad2eab9daef511"
+}, {
+  "publishedAt" : "2025-05-13T10:00:00Z",
+  "author" : "Curt Devine, Isabelle Chapman, Majlie de Puy Kamp",
+  "description" : "The Trump family’s business ties to the Middle East have more than tripled since the president’s first term in office, a CNN a tally of the deals has found – including a slew of new projects announced since he reclaimed the White House.",
+  "source" : "CNN",
+  "type" : "news",
+  "title" : "Luxury skyscrapers, golf courses and cryptocurrency: The Trump family’s rapidly expanding Middle East business - CNN",
+  "url" : "https://www.cnn.com/2025/05/13/politics/trump-middle-east-business-invs"
+}, {
+  "publishedAt" : "2025-05-13T08:45:00Z",
+  "author" : "Ben Leonard, Meredith Lee Hill",
+  "description" : "The Energy and Commerce Committee chair is about to be put to the test.",
+  "source" : "Politico",
+  "type" : "news",
+  "title" : "Guthrie has long wanted to overhaul Medicaid. Now he has to sell members on a compromise - Politico",
+  "url" : "https://www.politico.com/news/2025/05/13/house-republicans-guthrie-medicaid-00343431"
+}, {
+  "publishedAt" : "2025-05-13T08:42:55Z",
+  "author" : "Michael David Smith",
+  "description" : "The full NFL schedule comes out on Wednesday night, and some key games have already been announced.",
+  "source" : "NBCSports.com",
+  "type" : "news",
+  "title" : "Biggest games on the 2025 NFL schedule taking shape - NBC Sports",
+  "url" : "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/biggest-games-on-the-2025-nfl-schedule-taking-shape"
+}, {
+  "publishedAt" : "2025-05-13T08:41:31Z",
+  "author" : "null",
+  "description" : "The French actor, who denies the allegations, has been given a suspended jail term of 18 months.",
+  "source" : "BBC News",
+  "type" : "news",
+  "title" : "Gérard Depardieu found guilty of sexual assault in Paris trial - BBC",
+  "url" : "https://www.bbc.com/news/articles/cg5v7ny40q2o"
+}, {
+  "publishedAt" : "2025-05-13T08:18:52Z",
+  "author" : "null",
+  "description" : "The planned layoffs mean the Japanese carmaker has now cut about 15% of its workforce in the past year.",
+  "source" : "BBC News",
+  "type" : "news",
+  "title" : "Nissan to cut 11,000 more jobs and shut seven factories - BBC",
+  "url" : "https://www.bbc.com/news/articles/clyg250pe81o"
+}, {
+  "publishedAt" : "2025-05-13T08:13:21Z",
+  "author" : "Dominic Preston",
+  "description" : "President Trump has reduced the ‘de minimis’ tariff rate on cheap imports from China from 120 percent to 54 percent, or a flat fee of $100.",
+  "source" : "The Verge",
+  "type" : "news",
+  "title" : "Trump reduces tax on cheap imports from China - The Verge",
+  "url" : "https://www.theverge.com/news/665541/trump-reduces-tax-on-cheap-imports-from-china"
+}, {
+  "publishedAt" : "2025-05-13T07:31:11Z",
+  "author" : "Dominic Preston",
+  "description" : "Sony takes tech from its Bravia TVs, Alpha cameras, and Walkmans to upgrade its flagship Xperia 1 VII phone.",
+  "source" : "The Verge",
+  "type" : "news",
+  "title" : "The Xperia 1 VII is a greatest hits of Sony R&D - The Verge",
+  "url" : "https://www.theverge.com/news/665068/sony-xperia-1-vii-alpha-bravia-walkman-release-date-price-specs"
+}, {
+  "publishedAt" : "2025-05-13T07:17:00Z",
+  "author" : "null",
+  "description" : "Intel Arc B580 graphics card may get a dual-GPU variant with 48GB total memory So here’s something interesting we’ve learned recently, apparently one of the board partners is working on a dual-GPU version of the Arc B580. We won’t name the partner here, but y…",
+  "source" : "Videocardz.com",
+  "type" : "news",
+  "title" : "Intel Arc B580 rumored to get custom dual-GPU version with 48GB memory - VideoCardz.com",
+  "url" : "https://videocardz.com/newz/intel-arc-b580-rumored-to-get-custom-dual-gpu-version-with-48gb-memory"
+}, {
+  "publishedAt" : "2025-05-13T06:46:07Z",
+  "author" : "Lim Hui Jie",
+  "description" : "Revenue for the full financial year rose 6.2%, but operating profit fell 12.2% and missed expectations.",
+  "source" : "CNBC",
+  "type" : "news",
+  "title" : "Honda Motor reports 76% plunge in operating profit in huge earnings miss - CNBC",
+  "url" : "https://www.cnbc.com/2025/05/13/honda-q4-earnings-plunge.html"
+}, {
+  "publishedAt" : "2025-05-13T05:42:13Z",
+  "author" : "null",
+  "description" : "A terror probe into a fire at the prime minister's London home and reaction to the government's new migration policy lead Tuesday's papers.",
+  "source" : "BBC News",
+  "type" : "news",
+  "title" : "Newspaper headlines: 'Terror probe' into fire and 'time to deliver' on immigration - BBC",
+  "url" : "https://www.bbc.com/news/articles/czx0r58j8ejo"
+}, {
+  "publishedAt" : "2025-05-13T05:17:11Z",
+  "author" : "Lee Ying Shan",
+  "description" : "Global banks are reviewing their China calls after the thawing of trade relations between Washington and Beijing.",
+  "source" : "CNBC",
+  "type" : "news",
+  "title" : "Investment banks lift China growth outlook after surprise trade deal with U.S. - CNBC",
+  "url" : "https://www.cnbc.com/2025/05/13/investment-banks-lift-china-growth-outlook-after-surprise-trade-deal-with-us.html"
+}, {
+  "publishedAt" : "2025-05-13T04:03:14Z",
+  "author" : "",
+  "description" : "Meanwhile, the Wizards, Jazz and Hornets continue to lose",
+  "source" : "CBS Sports",
+  "type" : "news",
+  "title" : "NBA Draft Lottery winners and losers: Mavericks' win fuels conspiracy theories, Spurs and 76ers also move up - CBS Sports",
+  "url" : "https://www.cbssports.com/nba/news/nba-draft-lottery-winners-and-losers-mavericks-win-fuels-conspiracy-theories-spurs-and-76ers-also-move-up/"
+}, {
+  "publishedAt" : "2025-05-13T03:00:00Z",
+  "author" : "Jamie Dettmer",
+  "description" : "For the U.S. president, Gaza is a sideshow, and he doesn’t want it disrupting his bigger diplomatic agenda of resets and mega deals.",
+  "source" : "POLITICO.eu",
+  "type" : "news",
+  "title" : "Trump’s Gulf tour doesn’t bode well for Israel - politico.eu",
+  "url" : "https://www.politico.eu/article/donald-trump-gulf-states-tour-israel-benjamin-netanyahu/"
+}, {
+  "publishedAt" : "2025-05-13T02:58:23Z",
+  "author" : "null",
+  "description" : "null",
+  "source" : "Spaceflight Now",
+  "type" : "news",
+  "title" : "SpaceX launches 26 Starlink satellites on Falcon 9 rocket from Vandenberg SFB - Spaceflight Now",
+  "url" : "https://spaceflightnow.com/2025/05/12/live-coverage-spacex-to-launch-26-starlink-satellites-on-falcon-9-rocket-from-vandenberg-sfb/"
+}, {
+  "publishedAt" : "2025-05-13T02:56:13Z",
+  "author" : "Nancy Dillon",
+  "description" : "Sean Combs's trial opened with video of an assault and claims that Combs had a male escort urinate in Cassie's mouth. Experts say it was all tactical.",
+  "source" : "Rolling Stone",
+  "type" : "news",
+  "title" : "Sean Combs Prosecutors Led with ‘Shock and Awe,’ Legal Experts Say - Rolling Stone",
+  "url" : "http://www.rollingstone.com/music/music-news/sean-combs-trafficking-trial-cassie-ventura-legal-experts-1235337450/"
+}, {
+  "publishedAt" : "2025-05-13T02:00:00Z",
+  "author" : "Chris Sheldon | NJ Advance Media for NJ.com",
+  "description" : "Usually there are 14 air traffic controllers working during that time period, the report said.",
+  "source" : "nj.com",
+  "type" : "news",
+  "title" : "Newark airport staffed with just 3 controllers as chaos continues, report says - NJ.com",
+  "url" : "https://www.nj.com/essex/2025/05/newark-airport-staffed-with-just-3-controllers-as-chaos-continues-report-says.html"
+}, {
+  "publishedAt" : "2025-05-13T01:35:35Z",
+  "author" : "Natalie Allison, Ellen Nakashima, Dan Lamothe, Derek Hawkins, Warren P. Strobel",
+  "description" : "The Qatari luxury jet offered to Trump is in San Antonio, Texas, suggesting that improvements to the plane may already be underway. But officials have raised security concerns.",
+  "source" : "The Washington Post",
+  "type" : "news",
+  "title" : "Trump’s gifted Qatari 747 would be a security problem, officials say - The Washington Post",
+  "url" : "https://www.washingtonpost.com/national-security/2025/05/12/trump-qatar-747-gift-security/"
+}, {
+  "publishedAt" : "2025-05-13T01:00:31Z",
+  "author" : "Ayana Archie",
+  "description" : "It has been over 20 years since NBC had rights to broadcast NBA games. Its last run was during the 90s, which coincided with Michael Jordan's reign over basketball.",
+  "source" : "NPR",
+  "type" : "news",
+  "title" : "Michael Jordan joins NBC as the network revives its NBA coverage - NPR",
+  "url" : "https://www.npr.org/2025/05/12/nx-s1-5396005/michael-jordan-nba-nbc"
+}, {
+  "condition" : "Clouds",
+  "city" : "Moscow",
+  "temperature" : 16.3,
+  "humidity" : 50,
+  "type" : "weather",
+  "windSpeed" : 3.58,
+  "timestamp" : 1747216208
+}, {
+  "condition" : "Clouds",
+  "city" : "New York",
+  "temperature" : 14.91,
+  "humidity" : 92,
+  "type" : "weather",
+  "windSpeed" : 6.26,
+  "timestamp" : 1747216219
+}, {
+  "condition" : "Clouds",
+  "city" : "Horinouchi",
+  "temperature" : 22.73,
+  "humidity" : 59,
+  "type" : "weather",
+  "windSpeed" : 5.36,
+  "timestamp" : 1747216229
+}, {
+  "condition" : "Clear",
+  "city" : "London",
+  "temperature" : 18.0,
+  "humidity" : 55,
+  "type" : "weather",
+  "windSpeed" : 2.24,
+  "timestamp" : 1747215701
+}, {
+  "condition" : "Clear",
+  "city" : "London",
+  "temperature" : 18.0,
+  "humidity" : 55,
+  "type" : "weather",
+  "windSpeed" : 2.24,
+  "timestamp" : 1747215701
+}, {
+  "condition" : "Clouds",
+  "city" : "Moscow",
+  "temperature" : 16.3,
+  "humidity" : 50,
+  "type" : "weather",
+  "windSpeed" : 3.58,
+  "timestamp" : 1747216224
+}, {
+  "condition" : "Clouds",
+  "city" : "New York",
+  "temperature" : 14.91,
+  "humidity" : 92,
+  "type" : "weather",
+  "windSpeed" : 6.26,
+  "timestamp" : 1747216652
+}, {
+  "condition" : "Clouds",
+  "city" : "Horinouchi",
+  "temperature" : 22.26,
+  "humidity" : 58,
+  "type" : "weather",
+  "windSpeed" : 5.36,
+  "timestamp" : 1747216739
+}, {
+  "condition" : "Clear",
+  "city" : "London",
+  "temperature" : 18.6,
+  "humidity" : 54,
+  "type" : "weather",
+  "windSpeed" : 1.34,
+  "timestamp" : 1747216286
+}, {
+  "condition" : "Clear",
+  "city" : "London",
+  "temperature" : 18.92,
+  "humidity" : 53,
+  "type" : "weather",
+  "windSpeed" : 2.24,
+  "timestamp" : 1747217032
+}, {
+  "condition" : "Clouds",
+  "city" : "Mitte",
+  "temperature" : 20.59,
+  "humidity" : 41,
+  "type" : "weather",
+  "windSpeed" : 7.6,
+  "timestamp" : 1747216663
+}, {
+  "condition" : "Clear",
+  "city" : "London",
+  "temperature" : 18.95,
+  "humidity" : 52,
+  "type" : "weather",
+  "windSpeed" : 3.58,
+  "timestamp" : 1747217185
+}, {
+  "condition" : "Clouds",
+  "city" : "Horinouchi",
+  "temperature" : 21.95,
+  "humidity" : 61,
+  "type" : "weather",
+  "windSpeed" : 5.36,
+  "timestamp" : 1747217936
+}, {
+  "condition" : "Clouds",
+  "city" : "Moscow Oblast",
+  "temperature" : 14.1,
+  "humidity" : 46,
+  "type" : "weather",
+  "windSpeed" : 3.58,
+  "timestamp" : 1747217812
 } ]
